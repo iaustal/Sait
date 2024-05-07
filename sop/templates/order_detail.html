@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+
+{% block title%}
+<title>Просмотр заказа</title>
+{% endblock %}
+
+{% block body %}
+{{ super() }}
+<div class="container" >
+<h1 align="center">ID заказа: {{order_id |safe}}</h1>
+
+    <div class="alert alert-info">
+<p > Клиент {{customer|safe}}</p>
+<p > Время заказа  {{order_date|safe}}</p>
+</div>
+
+<a href="/orders/{{order_id|safe}}/delete" class="btn btn-danger">Удалить</a><br><br>
+
+</div>
+
+
+{% endblock%}

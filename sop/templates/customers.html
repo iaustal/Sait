@@ -1,0 +1,23 @@
+{% extends 'base.html'%}
+
+{% block title%}
+<title>Список Клиентов</title>
+<link rel="stylesheet" href="static/css/incss.css" />
+{% endblock %}
+
+{% block body %}
+{{ super() }}
+<h2>Список Клиентов</h2>
+<hr>
+<ul class="list-posts">
+  {% for p in klient %}
+  <li>
+    <p class="title"><a class="slk" href="{{url_for ('ShowCustomers',alias=p.customer_id)}}">{{p.name}}</a></p>
+
+  </li>
+  {% endfor %}
+</ul>
+<hr>
+<button onclick="window.location.href = '/customer_add';" class="btn btn-success">Добавить клиентов</button>
+
+{% endblock%}

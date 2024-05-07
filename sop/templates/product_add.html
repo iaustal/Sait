@@ -1,0 +1,43 @@
+{% extends 'base.html' %}
+
+{% block title%}
+<title>Добавление продукта</title>
+{% endblock %}
+
+{% block body %}
+{{ super() }}
+<h1>Добавление продукта</h1>
+{% for cat, msg in get_flashed_messages(True) %}
+<div class="flash {{cat}}">{{msg}}</div>
+{% endfor %}
+
+
+<form name="myForm" action="{{ url_for('addProduct') }}" method="post" class="form-contact">
+    <p><label>Название:</label><input type="text" name="name" value="" required></p>
+    <p><label>Стоимость:</label><input type="text" name="price" value="" required></p>
+    <p><label>ID категории:</label><input type="text" name="category" value="" required></p>
+    <p><label>ID производителя:</label><input type="text" name="man" value="" required></p>
+
+
+    <p><input type="submit" class="btn btn-danger"  value="Добавить"></p>
+
+</form>
+
+
+
+
+<script>
+var languagesSelect = myForm.language;
+
+function changeOption(){
+
+    var selection = document.getElementById("info");
+    var selectedOption = languagesSelect. options[languagesSelect.selectedIndex];
+    selection.textContent =  selectedOption.text;
+}
+
+languagesSelect.addEventListener("change", changeOption);
+</script>
+
+
+{% endblock%}

@@ -1,0 +1,22 @@
+{% extends 'base.html'%}
+{% block title%}
+<title>Список Отзывов</title>
+<link rel="stylesheet" href="static/css/incss.css" />
+{% endblock %}
+
+{% block body %}
+{{ super() }}
+<h2>Список Отзывов</h2>
+<hr>
+<ul class="list-posts">
+  {% for p in klient %}
+  <li>
+    <p class="title"><a class="slk" href="{{url_for ('ShowReviews',alias=p.review_id)}}">Отзыв клиента {{p.review_id}}</a></p>
+
+  </li>
+  {% endfor %}
+</ul>
+<hr>
+<button onclick="window.location.href = '/review_add';" class="btn btn-success">Добавить отзыв</button>
+
+{% endblock%}

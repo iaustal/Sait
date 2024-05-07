@@ -1,0 +1,22 @@
+{% extends 'base.html'%}
+{% block title%}
+<title>Список Заказов</title>
+<link rel="stylesheet" href="static/css/incss.css" />
+{% endblock %}
+
+{% block body %}
+{{ super() }}
+<h2>Список Заказов</h2>
+<hr>
+<ul class="list-posts">
+  {% for p in klient %}
+  <li>
+    <p class="title"><a  class="slk" href="{{url_for ('ShowOrder',alias=p.order_id)}}">Заказ клиента {{p.customer_id}}</a></p>
+
+  </li>
+  {% endfor %}
+</ul>
+<hr>
+<button onclick="window.location.href = '/order_add';" class="btn btn-success">Добавить заказ</button>
+
+{% endblock%}

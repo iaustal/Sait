@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+
+{% block title%}
+<title>Просмотр производителя</title>
+{% endblock %}
+
+{% block body %}
+{{ super() }}
+<div class="container" >
+<h1 align="center">ID производителя: {{manufacturer_id|safe}}</h1>
+
+    <div class="alert alert-info">
+<p > {{name |safe}}</p>
+</div>
+
+<a href="/manufacturers/{{manufacturer_id|safe}}/delete" class="btn btn-danger">Удалить</a><br><br>
+
+</div>
+
+
+{% endblock%}

@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+
+{% block title%}
+<title>Просмотр отзыва</title>
+{% endblock %}
+
+{% block body %}
+{{ super() }}
+<div class="container" >
+<h1 align="center">ID отзыва: {{review_id|safe}}</h1>
+
+    <div class="alert alert-info">
+<p > Клиент {{customer_id|safe}}</p>
+<p > Продукт  {{product_id|safe}}</p>
+<p > Рейтинг {{rating|safe}}</p>
+<p > Комментарий {{comment|safe}}</p>
+<p > Комментарий {{review_date|safe}}</p>
+</div>
+
+
+
+</div>
+
+
+{% endblock%}

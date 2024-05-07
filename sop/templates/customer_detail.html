@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+
+{% block title%}
+<title>Просмотр клиента</title>
+{% endblock %}
+
+{% block body %}
+{{ super() }}
+<div class="container" >
+<h1 align="center">ID клиента: {{customer_id|safe}}</h1>
+
+    <div class="alert alert-info">
+<p > {{name |safe}}</p>
+<p > {{email |safe}}</p>
+</div>
+
+<a href="/customers/{{customer_id|safe}}/delete" class="btn btn-danger">Удалить</a><br><br>
+
+</div>
+
+
+{% endblock%}
